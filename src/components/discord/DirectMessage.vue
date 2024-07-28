@@ -42,11 +42,13 @@ import CreuzaIcon from '../../assets/discord-icons/creuza.png';
 import JoaoIcon from '../../assets/discord-icons/joao.png';
 import JlcIcon from '../../assets/discord-icons/jlc.gif';
 import DanielIcon from '../../assets/discord-icons/daniel.png';
-import BiaIcon from '../../assets/discord-icons/bia.jpeg';
+import BiDanIcon from '../../assets/discord-icons/bidan.png';
 import LuizIcon from '../../assets/discord-icons/luiz.png';
 import IsabelaIcon from '../../assets/discord-icons/isabela.png';
+import MarceloIcon from '../../assets/discord-icons/marcelo.png';
 import LuizMsg from '../../assets/luiz_msg.jpg';
 import IsabelaMsg from '../../assets/isabela_msg.mp3';
+import BiDanMsg from '../../assets/bidan.mp3';
 import { Ref, ref } from 'vue';
 
 export default {
@@ -103,22 +105,27 @@ Ass: Jotajhonson
         timestamp: '27/07/2024 19:47',
       },
       {
-        nickname: '918Jack',
-        text: 'Parabéns',
-        image: DanielIcon,
+        nickname: 'bidan',
+        text: `
+        <audio controls>
+          <source src="${BiDanMsg}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        `,
+        image: BiDanIcon,
         isSelected: false,
         timestamp: '27/07/2024 19:47',
       },
       {
-        nickname: 'Bia',
-        text: 'Parabéns',
-        image: BiaIcon,
-        isSelected: false,
-        timestamp: '27/07/2024 19:47',
-      },
-      {
-        nickname: 'Terror (Joao Vitor)',
-        text: 'Parabéns',
+        nickname: 'terror.joaovitor',
+        text: `Mano.
+
+O que dizer do Amaury que eu mal conheci mas já considero um amigo de longa data?
+Já fazem 9 anos que conheço ele, e tão rápido quanto o tempo passou eu consigo me lembrar de quando conheci ele. Nunca fui um bom amigo e não consegui deixar tantas boas marcas como ele deixou em mim. 
+Me admiro com a forma humilde e gente fina que ele sempre age com todos, e principalmente, me inspira muito a forma como todos que gostam dele são sempre tratados igualmente. Do mais chegado ao mais sumido, ele sempre recebe as pessoas com a mesma energia. 
+Mesmo antes dele começar a fazer faculdade de metanfetamina, eu sempre achei ele um cara muito inteligente e muito esforçado. E desde sempre eu admiro a garra que ele tinha. Me lembro de, no máximo, uma vez em que vi ele realmente triste e abatido. 
+Amaury, se você está lendo isso, significa que eu morri seu aniversário provavelmente já passou. Mas saiba que eu te desejo toda felicidade do mundo mano. Me alegra muito poder ter conhecido você. Dentro daquilo que eu acredito, desejo que Deus abençoe muito sua vida mano, você é um presente na vida dos seus amigos. Espero que a cada reencontro a gente possa rir e relembrar mais das mesmas histórias de sempre, e que você possa levar pra mais pessoas isso tudo que você trouxe pra mim e pra quem convive contigo. Um abraço mano, tenha um ótimo dia, feliz 30 anos!
+Ass: João Carvalho`,
         image: JoaoIcon,
         isSelected: false,
         timestamp: '27/07/2024 19:47',
@@ -140,6 +147,13 @@ Ass: Jotajhonson
 
         `,
         image: IsabelaIcon,
+        isSelected: false,
+        timestamp: '27/07/2024 19:47',
+      },
+      {
+        nickname: 'marcelo',
+        text: `Excelentíssimo caue, primeiramente meu filho é seu! Segundamente e de importância tao grande quanto a primeira frase (que é realmente importante) tô passando por aqui pra te deixar um feliz aniversário ehhehhe. Já faz um tempo que a gente não se vê, acho que a última vez foi no filme do Batman (que eu cochilei por sinal), mas em breve eu vorto pra bh, tudo no seu ciclo. Acho que nessa caminhada meio doidona do ensino médio até aqui a gente já viveu bastante coisa com nosso quarteto sinistro, momentos que precisamos uns dos outros e momentos que rimos uns dos outros e acho que é assim que a gente consegue aprender as pessoas que a gente quer levar pro resto da vida, que de fato é o grupo bem seletivo. Espero que você consiga realizar suas novas metas e que continue sendo você com o seu jeito caue. Um abraço pra todos da sua família, eu tô meio longe agora, mas sempre que vocês precisarem já sabem como me achar ehhehe um abraço mestres supremos !!!`,
+        image: MarceloIcon,
         isSelected: false,
         timestamp: '27/07/2024 19:47',
       },

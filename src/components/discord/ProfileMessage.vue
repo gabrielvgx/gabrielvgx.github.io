@@ -59,6 +59,8 @@ export default {
 .message {
   color: white;
   white-space: pre-line;
+  overflow-y: scroll;
+  max-height: 450px;
 }
 img.msg, audio {
   width: 100%;

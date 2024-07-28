@@ -1,5 +1,5 @@
 <template>
-  <div class="instruction">Clique na página</div>
+  <!-- <div class="instruction">Clique na página</div> -->
   <div class="book">
     <div class="page cover-front" @click="(e) => bookAnimation.movePage(e.currentTarget, 1)">
         <h1>O conto de Amaury</h1>
@@ -7,40 +7,27 @@
         <h2>Gabriel Víctor</h2>
     </div>
     <div class="page cover-front" @click="(e) => bookAnimation.movePage(e.currentTarget, 2)"></div>
-    <div class="page text-page" @click="(e) => bookAnimation.movePage(e.currentTarget, 3)">
-        <p>Mrs. Dalloway said she would buy the flowers herself.</p>
-        <p>For Lucy had her work cut out for her. The doors would be taken off their hinges; Rumpelmayer's men were coming. And then, thought Clarissa Dalloway, what a morning--fresh as if issued to children on a beach.</p>
-        <p>What a lark! What a plunge! For so it had always seemed to her, when, with a little squeak of the hinges, which she could hear now, she had burst open the French windows and plunged at Bourton into the open air. How fresh, how calm, stiller than
-            this of course, the air was in the early morning; like the flap of a wave; the kiss of a wave; chill and sharp and yet (for a girl of eighteen as she then was) solemn, feeling as she did, standing there at the open window, that something awful
-            was about to happen; looking at the flowers, at the trees with the smoke winding off them and the rooks rising, falling; standing and looking until Peter Walsh said, "Musing among the vegetables?"--was that it?--"I prefer men to cauliflowers"--was
-            that it? He must have said it at breakfast one morning when she had gone out on to the terrace--Peter Walsh. He would be back from India one of these days, June or July, she forgot which, for his letters were awfully dull; it was his sayings
-            one remembered; his eyes, his pocket-knife, his smile, his grumpiness and, when millions of things had utterly</p>
+    <div class="page text-page" v-for="(page, idx) in pages" :key="idx" @click="(e) => bookAnimation.movePage(e.currentTarget, idx+3)">
+      <p>{{ page.text }}</p>
+      <img v-if="page.img && !Array.isArray(page.img)" :src="page.img" width="200">
+      <img v-if="Array.isArray(page.img)" v-for="(image, imgIdx) in page.img" :key="imgIdx" :src="image" width="200">
     </div>
-    <div class="page text-page" @click="(e) => bookAnimation.movePage(e.currentTarget, 4)">
-        <p>vanished--how strange it was!--a few sayings like this about cabbages.</p>
-        <p>She stiffened a little on the kerb, waiting for Durtnall's van to pass. A charming woman, Scrope Purvis thought her (knowing her as one does know people who live next door to one in Westminster); a touch of the bird about her, of the jay, blue-green,
-            light, vivacious, though she was over fifty, and grown very white since her illness. There she perched, never seeing him, waiting to cross, very upright.</p>
-        <p>For having lived in Westminster--how many years now? over twenty,--one feels even in the midst of the traffic, or waking at night, Clarissa was positive, a particular hush, or solemnity; an indescribable pause; a suspense (but that might be her
-            heart, affected, they said, by influenza) before Big Ben strikes. There! Out it boomed. First a warning, musical; then the hour, irrevocable. The leaden circles dissolved in the air. Such fools we are, she thought, crossing Victoria Street.
-            For Heaven only knows why one loves it so, how one sees it so, making it up, building it round one, tumbling it, creating it every moment afresh; but the veriest frumps, the most dejected of miseries sitting on doorsteps (drink their downfall)
-            do the same; can't be dealt with, she felt positive, by Acts of Parliament for that very reason: they love life. In people's eyes, in the swing, tramp, and trudge; in the bellow and</p>
+    <div class="page text-page" @click="(e) => bookAnimation.movePage(e.currentTarget, pages.length + 2)">
+        <!-- <p>Esta história se trata da lenda de Amaury.</p> -->
+        <!-- <img :src="pages[0].img" width="200"> -->
+    </div>
+    <!-- <div class="page text-page" @click="(e) => bookAnimation.movePage(e.currentTarget, 4)">
+        <p>Um bravo nerdola</p>
+        <img :src="pages[1].img" width="200">
     </div>
     <div class="page text-page" @click="(e) => bookAnimation.movePage(e.currentTarget, 5)">
-        <p> the uproar; the carriages, motor cars, omnibuses, vans, sandwich men shuffling and swinging; brass bands; barrel organs; in the triumph and the jingle and the strange high singing of some aeroplane overhead was what she loved; life; London; this
-            moment of June.</p>
-        <p>For it was the middle of June. The War was over, except for some one like Mrs. Foxcroft at the Embassy last night eating her heart out because that nice boy was killed and now the old Manor House must go to a cousin; or Lady Bexborough who opened
-            a bazaar, they said, with the telegram in her hand, John, her favourite, killed; but it was over; thank Heaven--over. It was June. The King and Queen were at the Palace. And everywhere, though it was still so early, there was a beating, a
-            stirring of galloping ponies, tapping of cricket bats; Lords, Ascot, Ranelagh and all the rest of it; wrapped in the soft mesh of the grey-blue morning air, which, as the day wore on, would unwind them, and set down on their lawns and pitches
-            the bouncing ponies, whose forefeet just struck the ground and up they sprung, the whirling young men, and laughing girls in their transparent muslins who, even now, after dancing all night, were taking their absurd woolly dogs for a run;
-            and even now, at this hour, discreet old dowagers were shooting out in their motor cars on errands of mystery; and the shopkeepers were fidgeting in their windows with their paste and diamonds, their lovely old sea-green brooches in </p>
+        <p>Temido por povos de norte a sul, leste a oeste.</p>
+        <img :src="pages[2].img" width="200">
     </div>
     <div class="page text-page" @click="(e) => bookAnimation.movePage(e.currentTarget, 6)">
         <p>eighteenth-century settings to tempt Americans (but one must economise, not buy things rashly for Elizabeth), and she, too, loving it as she did with an absurd and faithful passion, being part of it, since her people were courtiers once in the
-            time of the Georges, she, too, was going that very night to kindle and illuminate; to give her party. But how strange, on entering the Park, the silence; the mist; the hum; the slow-swimming happy ducks; the pouched birds waddling; and who
             should be coming along with his back against the Government buildings, most appropriately, carrying a despatch box stamped with the Royal Arms, who but Hugh Whitbread; her old friend Hugh--the admirable Hugh!</p>
-        <p>"Good-morning to you, Clarissa!" said Hugh, rather extravagantly, for they had known each other as children. "Where are you off to?"</p>
-        <p>"I love walking in London," said Mrs. Dalloway. "Really it's better than walking in the country."</p>
-    </div>
+    </div> -->
     <div class="page"></div>
     <div class="page"></div>
     <div class="page"></div>
@@ -76,12 +63,119 @@
 </template>
 <script lang="ts">
 import { BookAnimation } from '../helper/BookAnimation';
+import Foto1 from '../assets/amaury/foto1.jpg';
+import Foto2 from '../assets/amaury/foto2.png';
+import Foto3 from '../assets/amaury/foto3.webp';
+import Foto4 from '../assets/amaury/foto4.jpg';
+import Foto5 from '../assets/amaury/foto5.jpg';
+import Foto6 from '../assets/amaury/foto6.jpeg';
+import Foto7 from '../assets/amaury/foto7.jpg';
+import Foto8 from '../assets/amaury/foto8.jpg';
+import Foto9 from '../assets/amaury/foto9.jpg';
+import Foto10 from '../assets/amaury/foto10.jpg';
+import Foto11 from '../assets/amaury/foto11.jpg';
+import Foto12 from '../assets/amaury/foto12.jpg';
+import Foto13 from '../assets/amaury/foto13.jpg';
+import Foto14 from '../assets/amaury/foto14.jpg';
+import Foto15 from '../assets/amaury/foto15.jpg';
+import Foto16 from '../assets/amaury/foto16.png';
+import Foto17 from '../assets/amaury/foto17.jpg';
+import Foto18 from '../assets/amaury/foto18.webp';
+import Foto19 from '../assets/amaury/foto19.png';
+import Foto20 from '../assets/amaury/foto20.jpg';
 
 export default {
   setup() {
     const bookAnimation = new BookAnimation();
+    const pages = [
+      {
+        img: Foto1,
+        text: 'Uma história baseada em fatos reais sobre a história de Amaury.'
+      },
+      {
+        img: Foto11,
+        text: 'Era uma vez, em um reino chamado CEFET, havia um jovem herói chamado Amaury.'
+      },
+      {
+        img: Foto2,
+        text: 'Temido por povos de norte a sul, leste a oeste.'
+      },
+      {
+        // img: Foto5,
+        text: 'Durante sua jornada épica nesta escola, ele e seus companheiros formaram um grupo de heróis destemidos: Isabela do reino Delay, Gabriel - O Calmo, Marcelo - O Estranho e o próprio Amaury - O Exótico. Juntos, eles enfrentaram os desafios do mundo da informática, desvendando mistérios e resolvendo enigmas que poucos ousavam encarar.'
+      },
+      {
+        img: Foto5,
+        text: ''
+      },
+      {
+        img: Foto6,
+        text: ''
+      },
+      {
+        img: Foto15,
+        text: 'Com cada desafio superado, o grupo se tornava mais forte e unido. Amaury, com sua inteligência e dedicação, era uma peça fundamental nessa equipe. Gabriel, Isabela e Marcelo, cada um com suas habilidades únicas, completavam o grupo, fazendo deles uma força imparável. Eles riram, aprenderam e cresceram juntos, forjando laços que nem o tempo poderia desfazer.'
+      },
+      {
+        img: [Foto8, Foto9],
+        text: ''
+      },
+      {
+        img: Foto17,
+        text: ''
+      },
+      {
+        img: Foto16,
+        text: ''
+      },
+      {
+        // img: Foto11,
+        text: 'Após concluir sua jornada no CEFET, Amaury decidiu explorar um novo território: o reino de Farmácia, na grande Universidade. Lá, ele se dedicou a entender os segredos das poções e remédios, buscando maneiras de curar e ajudar os habitantes de seu reino. Esta sendo um caminho de muito estudo e dedicação, onde ele demonstra sua verdadeira vocação para o cuidado e a cura.'
+      },
+      {
+        img: Foto12,
+        text: ''
+      },
+      {
+        img: Foto13,
+        text: ''
+      },
+      {
+        img: Foto18,
+        text: ''
+      },
+      {
+        // img: Foto13,
+        text: 'Amaury também passou a trabalhar na FUNED, onde aplicou seu conhecimento para desenvolver novas fórmulas e medicamentos. Sua missão era proteger o reino de doenças e ajudar aqueles que precisavam, um verdadeiro ato de heroísmo moderno.'
+      },
+      {
+        // img: Foto14,
+        text: 'Após concluir sua jornada no CEFET, Amaury decidiu explorar um novo território: o reino de Farmácia, na grande Universidade. Lá, ele se dedicou a entender os segredos das poções e remédios, buscando maneiras de curar e ajudar os habitantes de seu reino. Esta sendo um caminho de muito estudo e dedicação, onde ele demonstra sua verdadeira vocação para o cuidado e a cura.'
+      },
+      {
+        img: Foto14,
+        text: ''
+      },
+      {
+        // img: Foto14,
+        text: 'E assim, Amaury, o herói da T.I e da Cura, continua sua jornada ao lado de seus amigos de longa data e de Amanda, sua amada. Hoje, em seu aniversário, Gabriel, Isabela, Marcelo e todos os que tiveram a sorte de compartilhar momentos com ele celebram sua vida e suas conquistas. Feliz aniversário, Amaury! Que sua jornada seja sempre iluminada e cheia de novas aventuras e realizações.'
+      },
+      {
+        img: [Foto4, Foto19],
+        // text: 'E assim, Amaury, o herói da T.I e da Cura, continua sua jornada ao lado de seus amigos de longa data e de Amanda, sua amada. Hoje, em seu aniversário, Gabriel, Isabela, Marcelo e todos os que tiveram a sorte de compartilhar momentos com ele celebram sua vida e suas conquistas. Feliz aniversário, Amaury! Que sua jornada seja sempre iluminada e cheia de novas aventuras e realizações.'
+      },
+      {
+        img: Foto3,
+        // text: 'E assim, Amaury, o herói da T.I e da Cura, continua sua jornada ao lado de seus amigos de longa data e de Amanda, sua amada. Hoje, em seu aniversário, Gabriel, Isabela, Marcelo e todos os que tiveram a sorte de compartilhar momentos com ele celebram sua vida e suas conquistas. Feliz aniversário, Amaury! Que sua jornada seja sempre iluminada e cheia de novas aventuras e realizações.'
+      },
+      {
+        img: Foto20,
+        // text: ``
+      },
+    ]
     return {
       bookAnimation,
+      pages,
     }
   }
 }
@@ -96,8 +190,10 @@ $text-font: 'EB Garamond', serif;
 $h1-font: 'Lora', serif;
 $h2-font: 'EB Garamond', serif;
 
-$book-h-ratio: 8.5;
-$book-w-ratio: 5.5;
+// $book-h-ratio: 8.5;
+$book-h-ratio: 5.5;
+// $book-w-ratio: 5.5;
+$book-w-ratio: 3.5;
 $book-size: 77px;
 
 * {
@@ -195,7 +291,7 @@ body {
     font-size: 24px;
     color: #134a78;  
     position: relative;
-    top: 40%;
+    top: 100px;
   }
   
   .hat {
