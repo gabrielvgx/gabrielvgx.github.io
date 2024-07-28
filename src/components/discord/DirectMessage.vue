@@ -67,7 +67,7 @@ export default {
     const messages = ref([
       {
         nickname: 'LucianSOA',
-        text: 'Parabéns',
+        text: 'Meus parabéns meu Bruxo tudo de bom que o galo melhore do brasileirao kkkkk e nois mineirin tamo junto',
         image: LucianIcon,
         isSelected: false,
         timestamp: '27/07/2024 19:47',
