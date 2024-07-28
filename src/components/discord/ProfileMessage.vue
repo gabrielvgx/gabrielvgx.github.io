@@ -59,7 +59,7 @@ export default {
 .message {
   color: white;
   white-space: pre-line;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 450px;
 }
 img.msg, audio {
