@@ -37,6 +37,7 @@
 import DiscordIcon from '../../assets/discord.png';
 import ProfileMessage from './ProfileMessage.vue';
 import LucianIcon from '../../assets/discord-icons/lucian.jpeg';
+import AmandaIcon from '../../assets/discord-icons/amanda.jpeg';
 import PiiqueIcon from '../../assets/discord-icons/piique.png';
 import CreuzaIcon from '../../assets/discord-icons/creuza.png';
 import JoaoIcon from '../../assets/discord-icons/joao.png';
@@ -154,6 +155,13 @@ Ass: João Carvalho`,
         nickname: 'marcelo',
         text: `Excelentíssimo caue, primeiramente meu filho é seu! Segundamente e de importância tao grande quanto a primeira frase (que é realmente importante) tô passando por aqui pra te deixar um feliz aniversário ehhehhe. Já faz um tempo que a gente não se vê, acho que a última vez foi no filme do Batman (que eu cochilei por sinal), mas em breve eu vorto pra bh, tudo no seu ciclo. Acho que nessa caminhada meio doidona do ensino médio até aqui a gente já viveu bastante coisa com nosso quarteto sinistro, momentos que precisamos uns dos outros e momentos que rimos uns dos outros e acho que é assim que a gente consegue aprender as pessoas que a gente quer levar pro resto da vida, que de fato é o grupo bem seletivo. Espero que você consiga realizar suas novas metas e que continue sendo você com o seu jeito caue. Um abraço pra todos da sua família, eu tô meio longe agora, mas sempre que vocês precisarem já sabem como me achar ehhehe um abraço mestres supremos !!!`,
         image: MarceloIcon,
+        isSelected: false,
+        timestamp: '27/07/2024 19:47',
+      },
+      {
+        nickname: 'amandafileto',
+        text: `Meu amor, feliz aniversário! Que esse seja o segundo de muitos que passaremos juntos. From your lovely babat! 💝`,
+        image: AmandaIcon,
         isSelected: false,
         timestamp: '27/07/2024 19:47',
       },
