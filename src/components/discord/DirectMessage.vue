@@ -41,7 +41,7 @@ import PiiqueIcon from '../../assets/discord-icons/piique.png';
 import CreuzaIcon from '../../assets/discord-icons/creuza.png';
 import JoaoIcon from '../../assets/discord-icons/joao.png';
 import JlcIcon from '../../assets/discord-icons/jlc.gif';
-import DanielIcon from '../../assets/discord-icons/daniel.png';
+// import DanielIcon from '../../assets/discord-icons/daniel.png';
 import BiDanIcon from '../../assets/discord-icons/bidan.png';
 import LuizIcon from '../../assets/discord-icons/luiz.png';
 import IsabelaIcon from '../../assets/discord-icons/isabela.png';
