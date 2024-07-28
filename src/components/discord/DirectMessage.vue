@@ -4,7 +4,8 @@
       <v-container class="server-list pa-0 ma-0 d-flex justify-content-center align-items-center">
         <div class="selected-left-line"></div>
         <v-btn icon color="#5865F2">
-          <DiscordIcon />
+          <!-- <DiscordIcon /> -->
+          <img width="36" :src="DiscordIcon" />
         </v-btn>
       </v-container>
       <v-container fluid class="pa-0 dm-list">
@@ -26,14 +27,14 @@
       </v-container>
     </v-container>
     <v-container fluid v-else class="pa-0">
-      <ProfileMessage :message="this.messages.find(e => e.isSelected)"
+      <ProfileMessage :message="messages.find((e: any) => e.isSelected)"
         @back="() => showProfileList = true"
       />
     </v-container>
   </v-container>
 </template>
 <script lang="ts">
-import DiscordIcon from '../../assets/discord.svg';
+import DiscordIcon from '../../assets/discord.png';
 import ProfileMessage from './ProfileMessage.vue';
 import LucianIcon from '../../assets/discord-icons/lucian.jpeg';
 import PiiqueIcon from '../../assets/discord-icons/piique.png';
@@ -46,12 +47,11 @@ import LuizIcon from '../../assets/discord-icons/luiz.png';
 import IsabelaIcon from '../../assets/discord-icons/isabela.png';
 import LuizMsg from '../../assets/luiz_msg.jpg';
 import IsabelaMsg from '../../assets/isabela_msg.mp3';
-import { ref } from 'vue';
+import { Ref, ref } from 'vue';
 
 export default {
   emits: ['close'],
   components: {
-    DiscordIcon,
     ProfileMessage,
   },
   methods: {
@@ -64,7 +64,7 @@ export default {
   },
   setup() {
     const showProfileList = ref(true);
-    const messages = ref([
+    const messages: Ref<any[]> = ref([
       {
         nickname: 'LucianSOA',
         text: 'Meus parabéns meu Bruxo tudo de bom que o galo melhore do brasileirao kkkkk e nois mineirin tamo junto',
@@ -147,6 +147,7 @@ Ass: Jotajhonson
     return {
       messages,
       showProfileList,
+      DiscordIcon,
     };
   }
 }
