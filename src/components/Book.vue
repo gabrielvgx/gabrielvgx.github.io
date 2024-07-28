@@ -83,6 +83,7 @@ import Foto17 from '../assets/amaury/foto17.jpg';
 import Foto18 from '../assets/amaury/foto18.webp';
 import Foto19 from '../assets/amaury/foto19.png';
 import Foto20 from '../assets/amaury/foto20.jpg';
+import Foto21 from '../assets/amaury/foto21.jpg';
 
 export default {
   setup() {
@@ -149,7 +150,7 @@ export default {
         text: 'Amaury também passou a trabalhar na FUNED, onde aplicou seu conhecimento para desenvolver novas fórmulas e medicamentos. Sua missão era proteger o reino de doenças e ajudar aqueles que precisavam, um verdadeiro ato de heroísmo moderno.'
       },
       {
-        // img: Foto14,
+        img: Foto21,
         text: 'Amaury encontrou o amor na figura de Amanda, uma dama que se tornou sua companheira fiel. Juntos, eles compartilharam momentos de alegria e desafios, construindo uma história de amor e companheirismo.'
       },
       {
