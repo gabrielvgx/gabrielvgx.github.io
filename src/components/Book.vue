@@ -150,7 +150,7 @@ export default {
       },
       {
         // img: Foto14,
-        text: 'Após concluir sua jornada no CEFET, Amaury decidiu explorar um novo território: o reino de Farmácia, na grande Universidade. Lá, ele se dedicou a entender os segredos das poções e remédios, buscando maneiras de curar e ajudar os habitantes de seu reino. Esta sendo um caminho de muito estudo e dedicação, onde ele demonstra sua verdadeira vocação para o cuidado e a cura.'
+        text: 'Amaury encontrou o amor na figura de Amanda, uma dama que se tornou sua companheira fiel. Juntos, eles compartilharam momentos de alegria e desafios, construindo uma história de amor e companheirismo.'
       },
       {
         img: Foto14,
